@@ -43,7 +43,7 @@ class DDPM(object):
 		return self.N
 
 
-	def forward_corruption(self, X_0, t): 
+	def forward_corrupt(self, X_0, t): 
 		""" 
 		Noise-corrupt the image X_0 up to timestep t. 
 		Remark: t has an integer values here, i.e., t == 0.001 is not possible. 
@@ -64,7 +64,7 @@ class DDPM(object):
 		return X_t, varepsilon 
 
 	
-	def reverse_sampling(self, X_t, t, predicted_noise): 
+	def reverse_sample(self, X_t, t, predicted_noise): 
 		""" 
 		Reverse-sample X_{t - 1} from the input X_t. 
 		Remark: In reverse sampling, the distribution of X_t conditioned on X_0 is not known in a closed form. 
