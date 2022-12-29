@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "diffusions"
+version = "0.1.0"
+description = ""
+authors = ["KunwooNa <jamongna@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+torch = "^1.13.0"
+torchvision = "^0.14.0"
+scikit-learn = "^1.1.0"
+tqdm = "^4.64.1"
+tensorboard = "^2.11.0"
+PyYAML = "^6.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.18.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
