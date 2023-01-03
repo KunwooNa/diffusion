@@ -81,6 +81,6 @@ def parse_configs():
     torch.backends.cudnn.benchmark = True
 
 
-    print(">" * 80)
+    print("-" * 80)
     print(args) 
     return args, configs 
