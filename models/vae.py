@@ -88,8 +88,8 @@ class VanillaVAE(nn.Module):
 		out = self.encoder(x) 
 		out = torch.flatten(out, start_dim = 1) 
 		mu = self.mu_theta(out) 
-		log_var = self.mu_theta(out) 
-		return [mu, log_var] 
+		log_std = self.mu_theta(out) 
+		return [mu, log_std] 
 	
 
 	def decode(self, z): 
@@ -104,14 +104,15 @@ class VanillaVAE(nn.Module):
 		return out 
 	
 	
-	def reparametrize(self, mu, log_var): 
+	def reparametrize(self, mu, log_std): 
 		"""
 		Perform reparametrization trick to sample from $\mathcal{N}(mu_\theta, var_\theta))$. 
 		"""
-		sigma = torch.exp(0.5 * log_var) 
+		sigma = torch.exp(0.5 * log_std) 
 		epsilon = torch.randn_like(sigma) 
 		return mu + epsilon * sigma
 	
+
 	def forward(self, x, **kwargs): 
 		""" 
 		Only used for a conveniency. 

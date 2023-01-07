@@ -1,3 +1,3 @@
-# TODO
+# About
 
-`[ ]` Use SDE-based score networks
+An implementaton of denoising diffusion probabilistic models.

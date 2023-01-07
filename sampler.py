@@ -16,6 +16,7 @@ class DiscreteSampler(object):
 		self.dynamics = dynamics 
 		self.device = device 
 	
+	
 	def sample(self, X_T, image_directory = None, stepsize = 100):
 		N = self.dynamics.N 
 		X = X_T.to(self.device) 
